@@ -1,7 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // Simulación de función de registro y envío de verificación
 async function registerUser(email: string, password: string) {
@@ -86,12 +86,6 @@ export default function RegisterScreen() {
     return (
         
         <View style={styles.container}>
-            <Image
-                source={require('../../assets/images/PadelPro.png')}
-                style={{ width: 120, height: 120, alignSelf: 'center', marginBottom: 32 }}
-                resizeMode="contain"
-            />
-
             <Text style={styles.title}>Registro de Usuario</Text>
             <TextInput
                 style={styles.input}

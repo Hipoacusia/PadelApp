@@ -1,13 +1,12 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const router = useRouter();
 
 export default function HomeScreen() {
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Image source={require('../../assets/images/PadelPro.png')} style={styles.logo} resizeMode="contain" />
             <Text style={styles.slogan}>
                 Donde la pasión por el pádel se vive en cada punto.
             </Text>
