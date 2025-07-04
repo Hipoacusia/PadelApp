@@ -1,7 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import React, { useState } from 'react';
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useState } from 'react';
+import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // Simulación de función de registro y envío de verificación
 async function registerUser(email: string, password: string) {
@@ -15,11 +15,12 @@ async function registerUser(email: string, password: string) {
 
 function SocialLoginButtons({ onGooglePress, onIcloudPress }: { onGooglePress: () => void;  onIcloudPress: () => void }) {
     return (
-        <View style={{ flexDirection: 'column', justifyContent: 'center', margin: 10 }}>
+        <View >
             <TouchableOpacity
                 style={{
                     margin: 20,
-                    backgroundColor: '#16a085',
+                    width: '100%',
+                    backgroundColor: '#5DD536',
                     borderRadius: 15,
                     padding: 12,
                     marginHorizontal: 12,
@@ -34,13 +35,14 @@ function SocialLoginButtons({ onGooglePress, onIcloudPress }: { onGooglePress: (
                 onPress={onGooglePress}
             >
                 
-                <FontAwesome name="google" size={28} color="#fff" padding="5" />
+                <FontAwesome name="google" size={28} color="#fff" style={{ marginRight: 20,}}/>
                 <Text style={{ color: '#fff', fontSize: 16, marginBottom: 4 }}>Registrarse con Google</Text>
             </TouchableOpacity>
              <TouchableOpacity
                 style={{
                     margin: 20,
-                    backgroundColor: '#16a085',
+                    width: '100%',
+                    backgroundColor: '#5DD536',
                     borderRadius: 15,
                     padding: 12,
                     marginHorizontal: 12,
@@ -53,7 +55,7 @@ function SocialLoginButtons({ onGooglePress, onIcloudPress }: { onGooglePress: (
                 }}
                 onPress={onIcloudPress}
             >
-                <FontAwesome name="apple" size={28} color="#fff" padding="5" />
+                <FontAwesome name="apple" size={28} color="#fff" style={{ marginRight: 20,}} />
                 <Text style={{ color: '#fff', fontSize: 16, marginBottom: 4 }}>Registrarse con Iphone</Text>
                 
             </TouchableOpacity>
@@ -86,6 +88,9 @@ export default function RegisterScreen() {
     return (
         
         <View style={styles.container}>
+            <Image style={styles.logo}
+                source={require('../../assets/images/padelpro.png')}
+            />
             <Text style={styles.title}>Registro de Usuario</Text>
             <TextInput
                 style={styles.input}
@@ -123,17 +128,26 @@ export default function RegisterScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: 'center',
         justifyContent: 'center',
         padding: 24,
         backgroundColor: '#fff',
     },
     title: {
-        fontSize: 24,
+        fontSize: 38,
         marginBottom: 24,
+        color: '#5DD536',
         textAlign: 'center',
         fontWeight: 'bold',
     },
+    logo: {
+        width: 280,
+        height: 280,
+        alignSelf: 'center',
+        marginBottom: 20,
+    },
     input: {
+        width: '70%',
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 8,
@@ -142,7 +156,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     registerButton: {
-        backgroundColor: '#16a085',
+        display: 'flex',
+        alignItems: 'center',
+        width: '65%',
+        backgroundColor: '#5DD536',
         paddingVertical: 14,
         paddingHorizontal: 40,
         borderRadius: 15,

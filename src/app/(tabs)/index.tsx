@@ -1,12 +1,17 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const router = useRouter();
 
 export default function HomeScreen() {
     return (
         <ScrollView contentContainerStyle={styles.container}>
+            <View>
+                <Image style={styles.logo}
+                    source={require('../../assets/images/padelpro.png')}
+                />
+            </View>
             <Text style={styles.slogan}>
                 Donde la pasión por el pádel se vive en cada punto.
             </Text>
@@ -31,29 +36,34 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        display: 'flex',
+        alignContent: 'center',
+        justifyContent: 'center',
         flexGrow: 1,
         alignItems: 'center',
         padding: 24,
         backgroundColor: '#fff',
     },
     logo: {
-        width: 180,
-        height: 180,
-        marginTop: 40,
+        width: 280,
+        height: 280,
+        marginTop: -50,
         marginBottom: 24,
     },
     slogan: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: '600',
         textAlign: 'center',
-        marginBottom: 32,
+        marginBottom: 150,
         color: '#1a1a1a',
     },
     button: {
-        backgroundColor: '#16a085',
+        backgroundColor: '#5DD536',
+        alignItems: 'center',
+        width:  250,
         paddingVertical: 14,
         paddingHorizontal: 40,
-        borderRadius: 30,
+        borderRadius: 8,
         marginBottom: 40,
         elevation: 2,
         overflow: 'hidden',
@@ -65,7 +75,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     infoSection: {
-        width: '100%',
+        width: '70%',
         backgroundColor: '#f7f7f7',
         borderRadius: 16,
         padding: 20,
@@ -76,7 +86,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '700',
         marginBottom: 10,
-        color: '#16a085',
+        color: '#5DD536',
     },
     infoText: {
         fontSize: 15,
